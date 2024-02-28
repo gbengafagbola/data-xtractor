@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Web-based Driver's License Data Extraction
+This web application enables users to extract data from a driver's license using their device's webcam. Upon successful extraction, the application displays the extracted data in an accessible and user-friendly format. The extracted information includes the user's full name, address, and driver's license issuance and expiration dates. The data is extracted individually, allowing for seamless integration with APIs for further processing.
 
-## Getting Started
+### Architecture - Algorithm
+- Caputre Image --> process captured image for accurate reading --> pass processed image to Tesseract for OCR processing --> filter data into respective data field
 
-First, run the development server:
+### Features
+- Webcam Data Extraction: Utilize your device's webcam to capture driver's license information.
+- Individual Field Extraction: Extract user's full name, address, and DL issuance & expiration date separately.
+- API Integration: Easily pass the extracted data to an API for future processing.
+- User-Friendly Display: Present the extracted information in a clear and user-friendly format.
+- Accessibility: Ensure the application is accessible to a wide range of users.
+- Progress bar
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### How to Use
+- Access the Web Application: Open the web application in your browser.
+- Grant Webcam Access: Allow the application to access your device's webcam.
+- Capture Driver's License: Position your driver's license in front of the webcam and capture the image.
+- Kindly Note on first iteration, the processed image that would deplict a much accurate reading would require a double click of the button
+- Review Extracted Data: The application will extract the user's full name, address, and DL issuance & expiration date.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+API Integration (Not Implemented): Use the extracted data and integrate it with APIs for additional processing.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Technologies Used
+- React: Front-end framework for building the user interface.
+- WebRTC: Web Real-Time Communication for accessing the device's webcam.
+- Tesseract.js: Optical Character Recognition (OCR) library for text extraction.
+- Headless UI for modal implementation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### API Integration (Example): Demonstrates how the extracted data can be sent to an API.
+Setup
+Clone the Repository: git clone https://github.com/yourusername/driver-license-extraction.git
+Install Dependencies: npm install | yarn 
+Run the Application: npm start | yarn dev
+Access the Application: Open http://localhost:3000 in your browser.
 
-## Learn More
+### Difficulty
+- Regex extracting the right data type
+- Research in other to process the image properly before data extraction is carried out
 
-To learn more about Next.js, take a look at the following resources:
+License
+This project is licensed under the MIT License.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
